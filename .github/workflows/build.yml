@@ -19,7 +19,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: ${{ secrets.DOCKERHUB_USER }}/acme.sh
+          images: ${{ secrets.DOCKERHUB_USER }}/riscv-acme.sh
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -42,7 +42,7 @@ jobs:
 
       - name: Build and push
         run: |
-          REPOS=" \
-            ${{ secrets.DOCKERHUB_USER }}/acme.sh \
+          REPOS="\
+            ${{ secrets.DOCKERHUB_USER }}/riscv-acme.sh \
             ghcr.io/${{ github.repository }} \
           " ./build-docker-riscv.sh

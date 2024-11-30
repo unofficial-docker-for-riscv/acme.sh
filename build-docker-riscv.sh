@@ -3,7 +3,7 @@
 
 VERSION=$(cat ./acme.sh | grep 'VER=' | cut -d '=' -f 2 | tr -d '"')
 
-REPOS=(${REPOS:-ngc7331/acme.sh})
+REPOS=(${REPOS:-ngc7331/riscv-acme.sh})
 TAGS=()
 for repo in ${REPOS[@]}; do
   TAGS+=("-t ${repo,,}:${VERSION}")
